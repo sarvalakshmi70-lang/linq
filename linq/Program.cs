@@ -12,70 +12,30 @@ class Program
         };
 
         Console.WriteLine("Original Numbers:");
-
-        foreach (int number in numbers)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine(string.Join(" ", numbers));
 
         var greaterThan50 = numbers.Where(n => n > 50);
-
-        Console.WriteLine("Numbers greater than 50:");
-
-        foreach (int number in greaterThan50)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nNumbers greater than 50:");
+        Console.WriteLine(string.Join(" ", greaterThan50));
 
         var multipliedNumbers = numbers.Select(n => n * 2);
-
-        Console.WriteLine("Numbers multiplied by 2:");
-
-        foreach (int number in multipliedNumbers)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nNumbers multiplied by 2:");
+        Console.WriteLine(string.Join(" ", multipliedNumbers));
 
         var ascending = numbers.OrderBy(n => n);
-
-        Console.WriteLine("Ascending Order:");
-
-        foreach (int number in ascending)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nAscending Order:");
+        Console.WriteLine(string.Join(" ", ascending));
 
         var descending = numbers.OrderByDescending(n => n);
+        Console.WriteLine("\nDescending Order:");
+        Console.WriteLine(string.Join(" ", descending));
 
-        Console.WriteLine("Descending Order:");
-
-        foreach (int number in descending)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
-
-        Console.WriteLine("First Number: " + numbers.First());
-
+        Console.WriteLine("\nFirst Number: " + numbers.First());
         Console.WriteLine("Last Number: " + numbers.Last());
-
         Console.WriteLine("Count: " + numbers.Count());
-
         Console.WriteLine("Sum: " + numbers.Sum());
-
         Console.WriteLine("Average: " + numbers.Average());
-
         Console.WriteLine("Minimum: " + numbers.Min());
-
         Console.WriteLine("Maximum: " + numbers.Max());
 
         Console.WriteLine("Any number greater than 90: " +
@@ -88,45 +48,19 @@ class Program
                           numbers.Contains(50));
 
         var uniqueNumbers = numbers.Distinct();
-
-        Console.WriteLine("Distinct Numbers:");
-
-        foreach (int number in uniqueNumbers)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nDistinct Numbers:");
+        Console.WriteLine(string.Join(" ", uniqueNumbers));
 
         var firstFive = numbers.Take(5);
-
-        Console.WriteLine("First 5 Numbers:");
-
-        foreach (int number in firstFive)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nFirst 5 Numbers:");
+        Console.WriteLine(string.Join(" ", firstFive));
 
         var skipFive = numbers.Skip(5);
-
-        Console.WriteLine("Skip First 5 Numbers:");
-
-        foreach (int number in skipFive)
-        {
-            Console.Write(number + " ");
-        }
-
-        Console.WriteLine("\n");
+        Console.WriteLine("\nSkip First 5 Numbers:");
+        Console.WriteLine(string.Join(" ", skipFive));
 
         var reversed = numbers.AsEnumerable().Reverse();
-
-        Console.WriteLine("Reversed Numbers:");
-
-        foreach (int number in reversed)
-        {
-            Console.Write(number + " ");
-        }
+        Console.WriteLine("\nReversed Numbers:");
+        Console.WriteLine(string.Join(" ", reversed));
     }
 }
